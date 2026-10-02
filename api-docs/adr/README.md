@@ -2,6 +2,10 @@
 
 Latest proposed decisions:
 
+- [ADR-367: Bounded research swarm and compute ownership](ADR-367-bounded-research-swarm-and-compute-ownership.md)
+- [ADR-366: CSI controls and frozen evaluation](ADR-366-csi-controls-and-frozen-evaluation.md)
+- [ADR-365: Public BFI dataset and decoder contract](ADR-365-public-bfi-dataset-and-decoder-contract.md)
+- [ADR-364: BFI capture admission and continuity](ADR-364-bfi-capture-admission-and-continuity.md)
 - [ADR-187: archive/v1 deprecation + model-weights honest labeling](ADR-187-archive-v1-deprecation-honest-labeling.md) (refs #509, #1125)
 - [ADR-186: Training progress API — wire the orphaned in-server trainer to /ws/train/progress](ADR-186-training-progress-api.md) (refs #1233)
 - [ADR-185: Python P6 SOTA bindings — AETHER, MERIDIAN, MAT](ADR-185-python-p6-sota-bindings.md)
@@ -9,7 +13,7 @@ Latest proposed decisions:
 - [ADR-264: Versioned wire protocol for RTL8720F CFR and Range-FFT reports](ADR-264-rtl8720f-radar-wire-protocol.md)
 - [ADR-263: Adopt RTL8720F 2.4 GHz FMCW radar as an optional RuView sensing platform](ADR-263-rtl8720f-2-4ghz-fmcw-radar-platform.md)
 
-This folder contains 210 Architecture Decision Records (ADRs) that document every significant technical choice in the RuView / WiFi-DensePose project. (The index tables below list a curated subset per domain; see the directory listing for the full set.)
+This folder records significant architectural choices in the RuView / WiFi-DensePose project. The index tables below list a curated subset per domain; see the directory listing for the full set.
 
 ## Why ADRs?
 
@@ -92,11 +96,13 @@ Statuses: **Proposed** (under discussion), **Accepted** (approved and/or impleme
 | [ADR-150](ADR-150-rf-foundation-encoder.md) | RF Foundation Encoder: pose-preserving, subject/room/device-invariant CSI embedding | Proposed |
 | [ADR-151](ADR-151-room-calibration-specialist-training.md) | Per-Room Calibration & Specialized Model Training (room-first → bank of small ruVector specialists) | Proposed |
 | [ADR-152](ADR-152-wifi-pose-sota-2026-intake.md) | WiFi-Pose SOTA 2026 Intake: geometry-conditioned calibration, external benchmarks, foundation-encoder recipe | Proposed |
+| [ADR-345](ADR-345-per-link-csi-and-node-to-node-ranging.md) | Per-link CSI attribution and node-to-node ranging — why phase-based position fails on this hardware (measured), and the coordination-free `(tx_mac, rx_seq)` join key that does not need it | Proposed — measurement layer implemented and validated on hardware; localization not built |
 | [ADR-348](ADR-348-independent-rust-multivariate-forecasting.md) | Independent Rust multivariate forecasting for RuView | Proposed |
 | [ADR-349](ADR-349-governed-local-and-fal-forecast-training.md) | Governed local and fal.ai forecast training | Proposed |
 | [ADR-350](ADR-350-ruvector-predictive-memory-and-ruvllm-boundary.md) | RuVector predictive memory and RuVLLM authority boundary | Proposed |
 | [ADR-354](ADR-354-forecast-governance-enforcement-in-ruforecast-submodule.md) | fal.ai forecast governance and spend enforcement now real, in the vendored RuForecast submodule | Accepted |
 | [ADR-355](ADR-355-local-empty-room-bootstrap-prior.md) | Local empty room bootstrap prior | Accepted |
+| [ADR-356](ADR-356-rate-truthful-csi-and-reliability-gated-adaptation.md) | Rate truthful CSI and reliability gated room adaptation | Accepted |
 
 ### Platform and UI
 
@@ -113,6 +119,7 @@ Statuses: **Proposed** (under discussion), **Accepted** (approved and/or impleme
 | [ADR-344](ADR-344-adaptive-local-installation-discovery.md) | Adaptive Local Installation Discovery | Accepted (local software path) |
 | [ADR-346](ADR-346-fail-closed-edge-occupancy-evidence.md) | Fail closed ESP32 occupancy evidence | Accepted (C6 occupancy integrity qualified) |
 | [ADR-347](ADR-347-rate-aware-esp32-temporal-sensing.md) | Rate aware ESP32 temporal sensing | Accepted (C6 timing and transport qualified) |
+| [ADR-363](ADR-363-native-macos-usb-node-onboarding.md) | Native macOS USB node onboarding with nonce bound discovery and fresh server verification | Accepted and physically qualified on one ESP32 S3; C6 and signed distribution pending |
 | [ADR-115](ADR-115-home-assistant-integration.md) | Home Assistant integration via MQTT auto-discovery + Matter bridge (HA-DISCO + HA-FABRIC + HA-MIND) | Accepted (MQTT track) / Proposed (Matter SDK P8b) |
 | [ADR-169](ADR-169-adam-mode-light-theme.md) | adam-mode — light theme toggle for the three.js realtime demo | Proposed |
 | [ADR-170](ADR-170-yoga-mode-pose-system.md) | yoga-mode — yoga pose detection, classification, and scoring for the three.js realtime demo | Proposed |
